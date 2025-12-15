@@ -71,11 +71,12 @@
     </div>
   </header>
 
-  <section class="relative overflow-hidden min-h-[520px] sm:min-h-[560px]" aria-label="Hero">
+<!-- Hero Section -->
+<section id="home" class="relative overflow-hidden min-h-[520px] sm:min-h-[560px]" aria-label="Hero">
 
   <!-- 背景视频 -->
   <video
-    class="absolute inset-0 w-full h-full object-cover"
+    class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
     autoplay
     muted
     loop
@@ -85,12 +86,41 @@
     <source src="assets/hero.mp4" type="video/mp4">
   </video>
 
-  <!-- 单层遮罩 -->
-  <div class="absolute inset-0 bg-black bg-opacity-65"></div>
+  <!-- 遮罩（放这里就对了：视频后、内容前） -->
+  <div class="absolute inset-0 bg-black bg-opacity-65 z-10"></div>
 
-  <!-- Hero 内容 -->
-  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-white">
-    <!-- 你原来的标题 / 按钮 -->
+  <!-- Hero 内容（确保在最上层） -->
+  <div class="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-white">
+    <div class="max-w-2xl space-y-4">
+      <h1 class="text-3xl sm:text-4xl font-bold leading-tight">
+        <span class="lang-block lang-active" data-lang="zh">欢迎来到房角石基督教会</span>
+        <span class="lang-block" data-lang="en">Welcome to Cornerstone Christian Church</span>
+        <span class="lang-block" data-lang="sr">Dobrodošli u Hrišćansku Crkvu Cornerstone</span>
+      </h1>
+
+      <p class="text-base sm:text-lg text-gray-200 font-semibold tracking-wide">
+        CORNERSTONE CHRISTIAN CHURCH OF SERBIA
+      </p>
+
+      <p class="text-sm sm:text-base leading-relaxed text-gray-200">
+        <span class="lang-block lang-active" data-lang="zh">我们渴望在基督里一同敬拜、成长、服事，成为社区的祝福。</span>
+        <span class="lang-block" data-lang="en">We gather to worship, grow, and serve together in Christ, becoming a blessing to our community.</span>
+        <span class="lang-block" data-lang="sr">Okupljamo se da slavimo, rastemo i služimo zajedno u Hristu, budući blagoslov za zajednicu.</span>
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="#schedule" class="inline-flex items-center justify-center px-5 py-3 h-12 bg-blue-800 text-white rounded-md font-semibold hover:bg-blue-900 focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
+          <span class="lang-block lang-active" data-lang="zh">加入我们</span>
+          <span class="lang-block" data-lang="en">Join Us</span>
+          <span class="lang-block" data-lang="sr">Pridruži se</span>
+        </a>
+        <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 h-12 bg-white text-gray-900 rounded-md font-semibold hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
+          <span class="lang-block lang-active" data-lang="zh">联系我们</span>
+          <span class="lang-block" data-lang="en">Contact Us</span>
+          <span class="lang-block" data-lang="sr">Kontakt</span>
+        </a>
+      </div>
+    </div>
   </div>
 
 </section>
