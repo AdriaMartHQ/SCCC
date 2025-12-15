@@ -71,25 +71,30 @@
     </div>
   </header>
 
-  <!-- ================= 内容区：直接编辑以下模块文本 ================= -->
-  <main id="home" class="pt-4">
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden min-h-[520px] sm:min-h-[560px]" aria-label="Hero">
+  <section class="relative overflow-hidden min-h-[520px] sm:min-h-[560px]" aria-label="Hero">
 
-<!-- Video background (autoplay, muted, loop, no controls) -->
-<video
-  class="absolute inset-0 w-full h-full object-cover"
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="metadata"
-  poster="assets/hero-poster.jpg">
-  <source src="assets/hero.mp4" type="video/mp4">
-</video>
+  <!-- 背景视频 -->
+  <video
+    class="absolute inset-0 w-full h-full object-cover"
+    autoplay
+    muted
+    loop
+    playsinline
+    webkit-playsinline
+    preload="auto">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
 
-<!-- Dark overlay for readability -->
-<div class="absolute inset-0 bg-black bg-opacity-65"></div>
+  <!-- 单层遮罩 -->
+  <div class="absolute inset-0 bg-black bg-opacity-65"></div>
+
+  <!-- Hero 内容 -->
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-white">
+    <!-- 你原来的标题 / 按钮 -->
+  </div>
+
+</section>
+
 
 
       <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-white">
