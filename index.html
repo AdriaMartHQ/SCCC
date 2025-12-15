@@ -431,7 +431,23 @@
 
 // 初始化：根据浏览器自动匹配
 setLanguage(detectLang());
+/* 👇👇👇 在这里，加下面这段 👇👇👇 */
 
+  window.addEventListener('load', () => {
+    const heroVideo = document.querySelector('#home video');
+    if (!heroVideo) return;
+
+    heroVideo.muted = true;
+
+    const playPromise = heroVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        document.addEventListener('click', () => {
+          heroVideo.play().catch(() => {});
+        }, { once: true });
+      });
+    }
+  });
   </script>
 </body>
 </html>
