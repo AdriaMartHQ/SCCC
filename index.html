@@ -75,21 +75,22 @@
   <main id="home" class="pt-4">
     <!-- Hero Section -->
     <section class="relative overflow-hidden min-h-[520px] sm:min-h-[560px]" aria-label="Hero">
-      <!-- Canva video background -->
-<div class="absolute inset-0 overflow-hidden">
-  <iframe
-    class="absolute inset-0 w-full h-full"
-    src="https://www.canva.com/design/DAG7l4Fl4GQ/UNSY0J8UjkBtPStpzBiJzw/watch?embed"
-    title="Hero Video"
-    frameborder="0"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    loading="lazy">
-  </iframe>
-</div>
+
+<!-- Video background (autoplay, muted, loop, no controls) -->
+<video
+  class="absolute inset-0 w-full h-full object-cover"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"
+  poster="assets/hero-poster.jpg">
+  <source src="assets/hero.mp4" type="video/mp4">
+</video>
 
 <!-- Dark overlay for readability -->
-<div class="absolute inset-0 bg-black bg-opacity-60"></div>
+<div class="absolute inset-0 bg-black bg-opacity-65"></div>
+
 
       <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-white">
         <div class="max-w-2xl space-y-4">
