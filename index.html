@@ -1,0 +1,340 @@
+cat > index.html <<'EOF'
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>塞尔维亚房角石基督教会 | Cornerstone Christian Church of Serbia</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <style>
+    body { font-family: "Noto Sans SC", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    html { scroll-behavior: smooth; }
+    .lang-block { display: none; }
+    .lang-active { display: block; }
+    .lang-btn-active { background:#1e3a8a; color:#fff; border-color:#1e3a8a; }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+      <a href="#home" class="flex items-center gap-3 min-w-0">
+        <img src="logo.jpg" alt="教会Logo" class="h-10 w-auto" />
+        <div class="min-w-0">
+          <div class="text-sm font-semibold truncate">塞尔维亚房角石基督教会</div>
+          <div class="text-xs text-gray-500 truncate">Serbian Cornerstone Christian Church</div>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <!-- Language -->
+        <div class="hidden sm:flex items-center gap-2">
+          <button id="btn-zh" type="button" class="px-3 py-1.5 text-sm border rounded-full hover:bg-gray-50">中文</button>
+          <button id="btn-en" type="button" class="px-3 py-1.5 text-sm border rounded-full hover:bg-gray-50">EN</button>
+          <button id="btn-sr" type="button" class="px-3 py-1.5 text-sm border rounded-full hover:bg-gray-50">SR</button>
+        </div>
+
+        <!-- Mobile menu -->
+        <button id="menuToggle" type="button" class="sm:hidden h-10 w-10 inline-flex items-center justify-center border rounded-xl hover:bg-gray-50" aria-label="Toggle navigation" aria-controls="mobileMenu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Desktop nav -->
+    <nav class="hidden sm:block border-t border-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
+        <div class="flex gap-5 text-sm">
+          <a href="#home" class="hover:text-blue-900">首页</a>
+          <a href="#times" class="hover:text-blue-900">聚会时间</a>
+          <a href="#media" class="hover:text-blue-900">影音见证</a>
+          <a href="#news" class="hover:text-blue-900">公告</a>
+          <a href="#contact" class="hover:text-blue-900">联系我们</a>
+        </div>
+
+        <div class="sm:hidden"></div>
+      </div>
+    </nav>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="sm:hidden hidden border-t border-gray-100">
+      <div class="px-4 py-3 flex gap-2">
+        <button id="mbtn-zh" type="button" class="flex-1 px-3 py-2 text-sm border rounded-xl">中文</button>
+        <button id="mbtn-en" type="button" class="flex-1 px-3 py-2 text-sm border rounded-xl">EN</button>
+        <button id="mbtn-sr" type="button" class="flex-1 px-3 py-2 text-sm border rounded-xl">SR</button>
+      </div>
+      <div class="px-4 pb-4 grid gap-2 text-sm">
+        <a href="#home" class="px-3 py-2 rounded-xl hover:bg-gray-50">首页</a>
+        <a href="#times" class="px-3 py-2 rounded-xl hover:bg-gray-50">聚会时间</a>
+        <a href="#media" class="px-3 py-2 rounded-xl hover:bg-gray-50">影音见证</a>
+        <a href="#news" class="px-3 py-2 rounded-xl hover:bg-gray-50">公告</a>
+        <a href="#contact" class="px-3 py-2 rounded-xl hover:bg-gray-50">联系我们</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border border-gray-200">
+          <span class="h-2 w-2 rounded-full bg-blue-900"></span>
+          <span class="text-gray-600">Holy · Modern · Clean</span>
+        </div>
+
+        <div class="mt-5 lang-block lang-zh">
+          <h1 class="text-3xl sm:text-4xl font-bold leading-tight">塞尔维亚房角石基督教会</h1>
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            我们盼望在基督里建立信心、彼此相爱，并在塞尔维亚见证福音。
+          </p>
+        </div>
+
+        <div class="mt-5 lang-block lang-en">
+          <h1 class="text-3xl sm:text-4xl font-bold leading-tight">Serbian Cornerstone Christian Church</h1>
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            We build faith in Christ, grow in love, and bear witness to the Gospel in Serbia.
+          </p>
+        </div>
+
+        <div class="mt-5 lang-block lang-sr">
+          <h1 class="text-3xl sm:text-4xl font-bold leading-tight">Srpska Hrišćanska Crkva Kamen Temeljac</h1>
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            Gradimo veru u Hristu, rastemo u ljubavi i svedočimo Jevanđelje u Srbiji.
+          </p>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#times" class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-blue-900 text-white text-sm font-semibold hover:opacity-95">
+            <i class="fa-regular fa-calendar mr-2"></i> 查看聚会时间
+          </a>
+          <a href="#news" class="inline-flex items-center justify-center px-5 py-3 rounded-2xl border text-sm font-semibold hover:bg-gray-50">
+            <i class="fa-regular fa-bell mr-2"></i> 最新公告
+          </a>
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-8">
+        <div class="text-sm font-semibold text-gray-900">本周信息</div>
+        <div class="mt-3 grid gap-3">
+          <div class="flex items-start gap-3">
+            <div class="h-10 w-10 rounded-2xl bg-gray-50 flex items-center justify-center"><i class="fa-solid fa-location-dot text-blue-900"></i></div>
+            <div class="min-w-0">
+              <div class="text-sm font-semibold">聚会地点</div>
+              <div class="text-sm text-gray-600 break-words">
+                （请在此填写地址）<br/>
+                例：70号批发市场 2楼 216号
+              </div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="h-10 w-10 rounded-2xl bg-gray-50 flex items-center justify-center"><i class="fa-solid fa-clock text-blue-900"></i></div>
+            <div>
+              <div class="text-sm font-semibold">主日聚会</div>
+              <div class="text-sm text-gray-600">周日 10:30（示例，可修改）</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="h-10 w-10 rounded-2xl bg-gray-50 flex items-center justify-center"><i class="fa-solid fa-heart text-blue-900"></i></div>
+            <div>
+              <div class="text-sm font-semibold">欢迎新朋友</div>
+              <div class="text-sm text-gray-600">你可以直接来，也可以先联系我们。</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 text-xs text-gray-500">
+          维护提示：以后要更新内容，只需编辑本页的文字或公告数据即可。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Times -->
+  <section id="times" class="border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-xl font-bold">聚会时间</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-4">
+        <div class="rounded-3xl border p-6">
+          <div class="text-sm font-semibold">主日崇拜</div>
+          <div class="mt-2 text-gray-600 text-sm">周日 10:30（示例）</div>
+          <div class="mt-2 text-gray-600 text-sm">地点：请填写</div>
+        </div>
+        <div class="rounded-3xl border p-6">
+          <div class="text-sm font-semibold">女性团契</div>
+          <div class="mt-2 text-gray-600 text-sm">周二 09:30–11:00（示例）</div>
+          <div class="mt-2 text-gray-600 text-sm">地点：请填写</div>
+        </div>
+        <div class="rounded-3xl border p-6">
+          <div class="text-sm font-semibold">小组聚会</div>
+          <div class="mt-2 text-gray-600 text-sm">按城市/时间安排（示例）</div>
+          <div class="mt-2 text-gray-600 text-sm">兹雷尼亚宁小组等</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media -->
+  <section id="media" class="border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-xl font-bold">影音见证</h2>
+      <p class="mt-3 text-sm text-gray-600">可放 YouTube / B站链接。手机端会自适应。</p>
+      <div class="mt-6 rounded-3xl border overflow-hidden">
+        <div class="aspect-video bg-gray-50">
+          <!-- 替换为你的 YouTube embed 链接 -->
+          <iframe class="w-full h-full" loading="lazy"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Featured video" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news" class="border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-bold">公告</h2>
+          <p class="mt-2 text-sm text-gray-600">三语公告（中文/英文/塞语）。只需要改下面这段数据即可。</p>
+        </div>
+        <a class="text-sm font-semibold text-blue-900 hover:underline" href="https://github.com/AdriaMartHQ/SCCC/edit/main/index.html" target="_blank" rel="noreferrer">
+          <i class="fa-regular fa-pen-to-square mr-1"></i> 直接在 GitHub 编辑
+        </a>
+      </div>
+
+      <!-- ✅ 以后更新公告：只改这段数据 -->
+      <script>
+        const ANNOUNCEMENTS = [
+          {
+            date: "2025-12-15",
+            zh: "欢迎参加本周主日聚会，地点与时间请查看「聚会时间」。",
+            en: "Welcome to this Sunday service. Please check “Times” for location & schedule.",
+            sr: "Dobrodošli na nedeljno bogosluženje. Pogledajte „Vreme“ za lokaciju i raspored."
+          },
+          {
+            date: "2025-12-20",
+            zh: "圣诞节特别聚会：请提前 10 分钟到场。",
+            en: "Christmas special service: please arrive 10 minutes early.",
+            sr: "Božićno bogosluženje: dođite 10 minuta ranije."
+          }
+        ];
+      </script>
+
+      <div id="newsList" class="mt-6 grid md:grid-cols-2 gap-4"></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-xl font-bold">联系我们</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-4">
+        <div class="rounded-3xl border p-6">
+          <div class="text-sm font-semibold"><i class="fa-solid fa-envelope mr-2 text-blue-900"></i>Email</div>
+          <div class="mt-2 text-sm text-gray-600 break-words">your@email.com</div>
+        </div>
+        <div class="rounded-3xl border p-6">
+          <div class="text-sm font-semibold"><i class="fa-brands fa-whatsapp mr-2 text-blue-900"></i>WhatsApp</div>
+          <div class="mt-2 text-sm text-gray-600">+381 xx xxx xxxx</div>
+        </div>
+        <div class="rounded-3xl border p-6">
+          <div class="text-sm font-semibold"><i class="fa-brands fa-youtube mr-2 text-blue-900"></i>YouTube</div>
+          <div class="mt-2 text-sm text-gray-600">Channel link</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-gray-500 flex flex-col sm:flex-row gap-2 justify-between">
+      <div>© <span id="year"></span> SCCC</div>
+      <div>Made with faith · simple · fast</div>
+    </div>
+  </footer>
+
+  <script>
+    // Language switch
+    const setLang = (lang) => {
+      document.querySelectorAll(".lang-block").forEach(el => el.classList.remove("lang-active"));
+      document.querySelectorAll(`.lang-${lang}`).forEach(el => el.classList.add("lang-active"));
+
+      const ids = ["zh","en","sr"];
+      ids.forEach(k => {
+        document.getElementById(`btn-${k}`)?.classList.remove("lang-btn-active");
+        document.getElementById(`mbtn-${k}`)?.classList.remove("lang-btn-active");
+      });
+      document.getElementById(`btn-${lang}`)?.classList.add("lang-btn-active");
+      document.getElementById(`mbtn-${lang}`)?.classList.add("lang-btn-active");
+
+      localStorage.setItem("SCCC_LANG", lang);
+    };
+
+    const initLang = () => {
+      const saved = localStorage.getItem("SCCC_LANG") || "zh";
+      setLang(saved);
+    };
+
+    document.getElementById("btn-zh")?.addEventListener("click", ()=>setLang("zh"));
+    document.getElementById("btn-en")?.addEventListener("click", ()=>setLang("en"));
+    document.getElementById("btn-sr")?.addEventListener("click", ()=>setLang("sr"));
+    document.getElementById("mbtn-zh")?.addEventListener("click", ()=>setLang("zh"));
+    document.getElementById("mbtn-en")?.addEventListener("click", ()=>setLang("en"));
+    document.getElementById("mbtn-sr")?.addEventListener("click", ()=>setLang("sr"));
+
+    // Mobile menu
+    const toggle = document.getElementById("menuToggle");
+    const panel = document.getElementById("mobileMenu");
+    toggle?.addEventListener("click", () => {
+      const isOpen = !panel.classList.contains("hidden");
+      panel.classList.toggle("hidden");
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+    });
+    panel?.querySelectorAll("a").forEach(a => a.addEventListener("click", ()=>panel.classList.add("hidden")));
+
+    // Render announcements
+    const renderAnnouncements = () => {
+      const lang = localStorage.getItem("SCCC_LANG") || "zh";
+      const list = document.getElementById("newsList");
+      if (!list) return;
+      list.innerHTML = "";
+
+      ANNOUNCEMENTS
+        .slice()
+        .sort((a,b)=> (a.date < b.date ? 1 : -1))
+        .forEach(item => {
+          const text = item[lang] || item.zh;
+          const card = document.createElement("div");
+          card.className = "rounded-3xl border p-6";
+          card.innerHTML = `
+            <div class="text-xs text-gray-500">${item.date}</div>
+            <div class="mt-2 text-sm font-semibold text-gray-900">${text}</div>
+          `;
+          list.appendChild(card);
+        });
+    };
+
+    // Re-render when language changes
+    const oldSet = setLang;
+    window.setLang = (lang) => { oldSet(lang); renderAnnouncements(); };
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    initLang();
+    renderAnnouncements();
+  </script>
+</body>
+</html>
+EOF
