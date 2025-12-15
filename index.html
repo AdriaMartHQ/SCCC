@@ -71,25 +71,31 @@
     </div>
   </header>
 
-  <!-- ================= 内容区：直接编辑以下模块文本 ================= -->
-  <main id="home" class="pt-4">
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden min-h-[520px] sm:min-h-[560px]" aria-label="Hero">
-      <!-- Canva video background -->
-<div class="absolute inset-0 overflow-hidden">
-  <iframe
-    class="absolute inset-0 w-full h-full"
-    src="https://www.canva.com/design/DAG7l4Fl4GQ/UNSY0J8UjkBtPStpzBiJzw/watch?embed"
-    title="Hero Video"
-    frameborder="0"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    loading="lazy">
-  </iframe>
-</div>
+  <section class="relative overflow-hidden min-h-[520px] sm:min-h-[560px]" aria-label="Hero">
 
-<!-- Dark overlay for readability -->
-<div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  <!-- 背景视频 -->
+  <video
+    class="absolute inset-0 w-full h-full object-cover"
+    autoplay
+    muted
+    loop
+    playsinline
+    webkit-playsinline
+    preload="auto">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+
+  <!-- 单层遮罩 -->
+  <div class="absolute inset-0 bg-black bg-opacity-65"></div>
+
+  <!-- Hero 内容 -->
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-white">
+    <!-- 你原来的标题 / 按钮 -->
+  </div>
+
+</section>
+
+
 
       <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-white">
         <div class="max-w-2xl space-y-4">
