@@ -351,16 +351,41 @@
     }
 
     langButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        setLanguage(btn.dataset.langBtn);
-        if (!mobileMenu.classList.contains('hidden')) toggleMenu();
-      });
-    });
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.langBtn;
+    localStorage.setItem('site_lang', lang);
+    setLanguage(lang);
+    if (!mobileMenu.classList.contains('hidden')) toggleMenu();
+  });
+});
+
 
     menuToggle.addEventListener('click', toggleMenu);
     mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
-    setLanguage('zh');
+    function detectLang() {
+  const saved = localStorage.getItem('site_lang');
+  if (saved && ['zh', 'en', 'sr'].includes(saved)) return saved;
+
+  const navLangs = (navigator.languages && navigator.languages.length)
+    ? navigator.languages
+    : [navigator.language || 'en'];
+
+  const langStr = navLangs.join(',').toLowerCase();
+
+  // Serbian
+  if (langStr.includes('sr') || langStr.includes('sr-latn') || langStr.includes('sr-cyrl')) return 'sr';
+
+  // Chinese (Simplified/Traditional 都归到中文显示)
+  if (langStr.includes('zh')) return 'zh';
+
+  // 默认英文
+  return 'en';
+}
+
+// 初始化：根据浏览器自动匹配
+setLanguage(detectLang());
+
   </script>
 </body>
 </html>
